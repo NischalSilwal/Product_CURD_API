@@ -11,7 +11,7 @@ using Product_CURD_API.Data;
 namespace Product_CURD_API.Migrations
 {
     [DbContext(typeof(DemoDbContext))]
-    [Migration("20241008044301_init1")]
+    [Migration("20241010154953_init1")]
     partial class init1
     {
         /// <inheritdoc />
@@ -32,11 +32,15 @@ namespace Product_CURD_API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("ProductDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductImage")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -6,10 +6,17 @@ namespace Product_CURD_API.Model
     [Table("ProductCURD")]
     public class Product
     {
-        [Key]
+        [Required]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+
+        [Required]
+        public string? Name { get; set; }
+
+        [Required]
+        public string ProductDescription { get; set; }
+
+        [Required]
+        public string? ProductImage { get; set; }
 
     }
 }
